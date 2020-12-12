@@ -19,7 +19,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from 'ngx-toastr';
 import {TargetRegisterComponent} from "./components/target-register/target-register.component";
 import {ClientProfileComponent} from "./components/client-profile/client-profile.component";
-
+import {ProviderProfileComponent} from "./components/provider-profile/provider-profile.component"
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,10 @@ import {ClientProfileComponent} from "./components/client-profile/client-profile
     ProductComponent,
     ThankyouComponent,
     TargetRegisterComponent,
-    ClientProfileComponent
+    ClientProfileComponent,
+    ProviderProfileComponent
+
+
   ],
   imports: [
     BrowserModule,
