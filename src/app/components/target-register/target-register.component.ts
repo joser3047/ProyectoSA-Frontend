@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
 import {TargetService} from "../../services/target.service";
 import {TargetModel} from "../../models/target.model";
-import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 
 @Component({
@@ -22,23 +20,21 @@ export class TargetRegisterComponent implements OnInit{
 
     }
 
-    constructor(private http: HttpClient) {
-        this.target.user = this.idUser;
+    constructor(private targetService: TargetService) {
+
+
     }
 
     onSumbit(){
 
+        //supongo que por aca iria la variable de sesion
+        this.target.user = this.idUser;
+        this.targetService.registrarTarjeta(this.target);
+        location.reload();
 
 
-        console.log(this.target.tipo);
-        this.registrarTarjeta();
     }
 
-    registrarTarjeta(){
-
-        const r =this.http.post(this.url+'target', this.target).toPromise();
-        //console.log(r)
-    }
 
 }
 

@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {ProductModelServer, serverResponse} from "../../models/product.model";
+import {Component, Injectable, OnInit, ViewChild} from '@angular/core';
+import {UserService} from "../../services/user.service";
+
+
 
 @Component({
     selector: 'mg-home',
@@ -9,9 +10,23 @@ import {ProductModelServer, serverResponse} from "../../models/product.model";
 })
 
 export class ClientProfileComponent implements OnInit{
-    ngOnInit(): void {
 
+    idUser: number=1; //cambiar por variable de sesion
+    user;
+
+    constructor(private userService:UserService) {
     }
+
+    ngOnInit(): void {
+       const getUserPromise= this.userService.getSingleUser(1);
+       getUserPromise.then(value => {
+           console.log(value);
+
+           this.user = value.user;
+       })
+    }
+
+
 
 }
 
