@@ -4,6 +4,6 @@ export class TargetModel {
     caducidad: string;
     codigo: string;
     tipo: number;
-    user: number;
+    user: Number;
 
 }

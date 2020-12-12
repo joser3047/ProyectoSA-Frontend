@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TargetService} from "../../services/target.service";
 import {TargetModel} from "../../models/target.model";
+import {UsuarioService} from "../../services/usuario.service";
 import {environment} from "../../../environments/environment";
 
 @Component({
@@ -20,7 +21,7 @@ export class TargetRegisterComponent implements OnInit{
 
     }
 
-    constructor(private targetService: TargetService) {
+    constructor(private targetService: TargetService, private usarioService:UsuarioService) {
 
 
     }
@@ -28,7 +29,7 @@ export class TargetRegisterComponent implements OnInit{
     onSumbit(){
 
         //supongo que por aca iria la variable de sesion
-        this.target.user = this.idUser;
+        this.target.user = this.usarioService.getUserInfo().id;
         this.targetService.registrarTarjeta(this.target);
         location.reload();
 
