@@ -7,3 +7,8 @@ export class TargetModel {
     user: Number;
 
 }
+
+export class TargetNoMode{
+    numero:number
+    tipo?:number
+}
