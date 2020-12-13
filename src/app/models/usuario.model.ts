@@ -5,6 +5,6 @@ export interface IUsuario{
     celular?:string;
     email?:string;
     password?:string;
-    tipo_usuario?:boolean;
+    tipo_usuario?:Number;
     foto?:string;
 }
