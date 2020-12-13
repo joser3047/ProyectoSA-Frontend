@@ -1,0 +1,59 @@
+<div class="section">
+
+    <div class="container">
+
+        <div>
+
+            <h1>Registrar Tarjeta</h1>
+
+            <div>
+
+                <div>
+                    <br>
+                    <label>No. Tarjeta</label>
+                    <br>
+                    <input type="text" name="no" [(ngModel)]="target.no">
+
+                </div>
+
+                <div>
+
+                    <br>
+                    <label>Caducidad</label>
+                    <br>
+                    <input type="text" name="caducidad" [(ngModel)]="target.caducidad">
+
+                </div>
+
+
+                <div>
+
+                    <br>
+                    <label>Codigo:</label>
+                    <br>
+                    <input type="password" name="codigo" [(ngModel)]="target.codigo">
+                    <br>
+                </div>
+
+                <div>
+                    <br>
+                    <label>Tipo Tarjeta:</label><br>
+                    <select name="tipoTarjeta" id="tipoTarjeta" [(ngModel)]="target.tipo">
+                        <option value=1>Debito</option>
+                        <option value=2>Credito</option>
+                    </select>
+
+                </div>
+
+
+
+                <br>
+                <button class="btn btn-secondary" (click)="onSumbit()">Registrar</button>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>

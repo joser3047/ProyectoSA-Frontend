@@ -17,7 +17,9 @@ import {NgxSpinnerModule} from "ngx-spinner";
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from 'ngx-toastr';
-
+import {TargetRegisterComponent} from "./components/target-register/target-register.component";
+import {ClientProfileComponent} from "./components/client-profile/client-profile.component";
+import {ProviderProfileComponent} from "./components/provider-profile/provider-profile.component"
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,12 @@ import {ToastrModule} from 'ngx-toastr';
     CartComponent,
     CheckoutComponent,
     ProductComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    TargetRegisterComponent,
+    ClientProfileComponent,
+    ProviderProfileComponent
+
+
   ],
   imports: [
     BrowserModule,

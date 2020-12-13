@@ -8,6 +8,9 @@ import {CheckoutComponent} from "./components/checkout/checkout.component";
 import {ProductComponent} from "./components/product/product.component";
 import {ThankyouComponent} from "./components/thankyou/thankyou.component";
 
+import {TargetRegisterComponent} from "./components/target-register/target-register.component";
+import {ClientProfileComponent} from "./components/client-profile/client-profile.component";
+import {ProviderProfileComponent} from "./components/provider-profile/provider-profile.component";
 
 const routes: Routes = [
   {
@@ -30,7 +33,18 @@ const routes: Routes = [
   },
   {
     path: 'thankyou', component: ThankyouComponent
-  }
+  },
+  {
+    path: 'target-register', component: TargetRegisterComponent
+  },
+  {
+    path: 'client-profile', component: ClientProfileComponent
+  },
+
+  {
+    path: 'provider-profile', component: ProviderProfileComponent
+  },
+
 ];
 
 @NgModule({

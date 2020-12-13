@@ -10,7 +10,8 @@
       </ul>
       <ul class="header-links pull-right">
         <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-        <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+        <li><a routerLink="/register"><i class="fa fa-user-o"></i> My Account</a></li>
+        <li><a routerLink="/login"><i class="fa fa-user-o"></i> Login</a></li>
       </ul>
     </div>
   </div>
@@ -51,6 +52,7 @@
         <!-- ACCOUNT -->
         <div class="col-md-3 clearfix">
           <div class="header-ctn">
+            
             <!-- Wishlist -->
             <div>
               <a href="#">
@@ -124,9 +126,12 @@
       <!-- NAV -->
       <ul class="main-nav nav py-3">
         <li class="active"><a href="#">Home</a></li>
+        <li><a href="{{this.uiURL}}client-profile">Perfil</a></li>
+        <li><a href="{{this.uiURL}}target-register">Registrar Targetas</a></li>
         <li><a href="#">Categories</a></li>
         <li><a href="#">Games</a></li>
         <li><a href="#">Contact Us</a></li>
+
 
       </ul>
       <!-- /NAV -->
