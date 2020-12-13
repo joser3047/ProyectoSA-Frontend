@@ -52,12 +52,16 @@ export class UsuarioService {
     localStorage.setItem("usuario",user_json);
   }
 
+  logout(){
+    localStorage.removeItem("usuario");
+  }
+
   public getUserInfo():IUsuario{
     let user=localStorage.getItem("usuario");
     if(user!=undefined){
       return JSON.parse(user);
     }
-    let userEmpty:IUsuario={}
+    let userEmpty:IUsuario={id:0}
     return userEmpty;
   }
 
