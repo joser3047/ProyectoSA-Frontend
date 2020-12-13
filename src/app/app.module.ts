@@ -19,7 +19,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ToastrModule} from 'ngx-toastr';
 import {TargetRegisterComponent} from "./components/target-register/target-register.component";
 import {ClientProfileComponent} from "./components/client-profile/client-profile.component";
-import {ProviderProfileComponent} from "./components/provider-profile/provider-profile.component"
+import {ProviderProfileComponent} from "./components/provider-profile/provider-profile.component";
+import { HomeProveedorComponent } from './components/home-proveedor/home-proveedor.component';
+import { CreateProductComponent } from './components/create-product/create-product.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,9 @@ import {ProviderProfileComponent} from "./components/provider-profile/provider-p
     ThankyouComponent,
     TargetRegisterComponent,
     ClientProfileComponent,
-    ProviderProfileComponent
+    ProviderProfileComponent,
+    HomeProveedorComponent,
+    CreateProductComponent
 
 
   ],

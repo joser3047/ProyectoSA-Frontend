@@ -11,6 +11,8 @@ import {ThankyouComponent} from "./components/thankyou/thankyou.component";
 import {TargetRegisterComponent} from "./components/target-register/target-register.component";
 import {ClientProfileComponent} from "./components/client-profile/client-profile.component";
 import {ProviderProfileComponent} from "./components/provider-profile/provider-profile.component";
+import { HomeProveedorComponent } from './components/home-proveedor/home-proveedor.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'product/:id', component: ProductComponent
+  },
+  {
+    path: 'edit-product/:id', component: CreateProductComponent
   },
   {
     path: 'cart', component: CartComponent
@@ -43,6 +48,9 @@ const routes: Routes = [
 
   {
     path: 'provider-profile', component: ProviderProfileComponent
+  },
+  {
+    path: 'proveedor', component: HomeProveedorComponent
   },
 
 ];
