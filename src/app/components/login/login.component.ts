@@ -26,10 +26,18 @@ export class LoginComponent implements OnInit {
       res=>{
         //CODIGO SI LA RESPUESTA ES CORRECTA
         if(res!=undefined){
-          this.router.navigate(['/'])
-          .then(() => {
-            window.location.reload();
-          });
+          if(this.usuarioService.getUserInfo().tipo_usuario==0){
+            this.router.navigate(['/'])
+            .then(() => {
+              window.location.reload();
+            });
+          }else{
+            this.router.navigate(['/proveedor'])
+            .then(() => {
+              window.location.reload();
+            });
+          }
+          
         }else{
           this.toast.warning("Verifique usuario y contraseña.");
         }

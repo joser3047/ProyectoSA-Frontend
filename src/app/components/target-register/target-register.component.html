@@ -2,12 +2,11 @@
 
     <div class="container">
 
-        <div>
+        <div class="row">
 
-            <h1>Registrar Tarjeta</h1>
+            <div class="col-sm">
 
-            <div>
-
+                <h4>Registrar Tarjeta</h4>
                 <div>
                     <br>
                     <label>No. Tarjeta</label>
@@ -50,7 +49,36 @@
                 <br>
                 <button class="btn btn-secondary" (click)="onSumbit()">Registrar</button>
             </div>
+
+
+            <div class="col-sm">
+                <h4>Tarjetas Registradas:</h4>
+                <br>
+                <ul class="list-group">
+
+                    <li class="list-group-item" *ngFor="let item of info">
+                        {{item.numero}}
+                    </li>
+
+                </ul>
+
+                <label for="Targeta">Choose a no:</label>
+                <br>
+                <select name="Targeta" id="Targeta" [(ngModel)]="targetNo.numero">
+                    <option *ngFor="let item of info" value="{{item.numero}}">
+                        {{item.numero}}
+                    </option>
+                </select>
+                <br>
+                <br>
+                <button class="btn btn-secondary" (click)="deleteSumbit()">Eliminar Tarjeta</button>
+
+            </div>
+
+
+
         </div>
+
 
 
     </div>

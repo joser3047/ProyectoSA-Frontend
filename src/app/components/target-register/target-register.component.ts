@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TargetService} from "../../services/target.service";
-import {TargetModel} from "../../models/target.model";
+import {TargetModel, TargetNoMode} from "../../models/target.model";
 import {UsuarioService} from "../../services/usuario.service";
 import {environment} from "../../../environments/environment";
 
@@ -14,10 +14,22 @@ import {environment} from "../../../environments/environment";
 export class TargetRegisterComponent implements OnInit{
 
     target: TargetModel = new TargetModel();
-    idUser: number=1;
-    private url = environment.serverURL;
+    targetNo: TargetNoMode = new TargetNoMode();
+    info;
+
+
+
 
     ngOnInit(): void {
+
+        this.target.user = this.usarioService.getUserInfo().id;
+
+        const getUserPromise= this.targetService.getAllNumbers(this.target.user);
+        getUserPromise.then(value => {
+            console.log(value.user);
+
+            this.info = value.user;
+        })
 
     }
 
@@ -34,6 +46,13 @@ export class TargetRegisterComponent implements OnInit{
         location.reload();
 
 
+    }
+
+    deleteSumbit(){
+
+        console.log(this.targetNo)
+        this.targetService.deleteTarjeta(this.targetNo);
+        location.reload();
     }
 
 

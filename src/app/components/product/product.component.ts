@@ -41,7 +41,6 @@ export class ProductComponent implements AfterViewInit, OnInit {
         if (prod.images !== null) {
           this.thumbimages = prod.images.split(';');
         }
-
       });
     });
   }

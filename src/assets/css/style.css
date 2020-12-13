@@ -2131,6 +2131,12 @@ textarea.input {
   margin: 15px 0px;
 }
 
+.list-group{
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+}
 /*=========================================================
 	13 -> RESPONSIVE
 ===========================================================*/
