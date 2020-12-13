@@ -26,15 +26,7 @@ export class UsuarioService {
   }
 
   registro(usuario:IUsuario){
-    return this.http.post<any>(`${this.url}users/registroCliente`,usuario)
-    .pipe(tap(
-      (res:any)=>{
-        if(res){
-          this.saveUser(res);
-          //this.currentUserSubject.next(res);
-        }
-      }
-    ));
+    return this.http.post<any>(`${this.url}users/registro`,usuario);
   }
 
   registroProveedor(nombre:string,direccion:string,password:string,direccionFisica:string){
@@ -44,7 +36,7 @@ export class UsuarioService {
       password,
       direccionFisica
     }
-    return this.http.post<any>(`${this.url}users/registroProveedor`,send)
+    return this.http.post<any>(`${this.url}users/registro`,send)
     .pipe(tap(
       (res:any)=>{
         if(res){
@@ -55,7 +47,7 @@ export class UsuarioService {
     ));
   }
 
-  saveUser(usuario:string){
+  saveUser(usuario:any){
     let user_json=JSON.stringify(usuario);
     localStorage.setItem("usuario",user_json);
   }

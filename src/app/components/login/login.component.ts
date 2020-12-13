@@ -19,12 +19,7 @@ export class LoginComponent implements OnInit {
   email:string="";
   password:string="";
   errorAutenticacion:string="";
-  userInfo:IUsuario={email:'',password:''};
-
-
-  nombreEmpresa:string="";
-  emailEmpresa:string="";
-  direccionEmpresa:string="";
+  
   login(){
     
     this.usuarioService.login(this.email,this.password).subscribe(
@@ -46,45 +41,6 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  registrarCliente(){
-    this.usuarioService.registro(this.userInfo).subscribe(
-      res=>{
-        if(!res){
-          //this.router.navigate(['/home']);
-          this.router.navigate(['/home'])
-          .then(() => {
-            
-            window.location.reload();
-          });
-        }else{
-          this.errorAutenticacion="Por favor ingrese datos válidos.";
-        }
-      },
-      err=>{
-        this.errorAutenticacion="Por favor ingrese datos válidos.";
-      }
-    );
-  }
   
-
-  registrarProveedor(){
-    this.usuarioService.registro(this.userInfo).subscribe(
-      res=>{
-        if(res.GLB_USE_Id!=undefined && res.Nombres!=''){
-          //this.router.navigate(['/home']);
-          this.router.navigate(['/home'])
-          .then(() => {
-            
-            window.location.reload();
-          });
-        }else{
-          this.errorAutenticacion="Por favor ingrese datos válidos.";
-        }
-      },
-      err=>{
-        this.errorAutenticacion="Por favor ingrese datos válidos.";
-      }
-    );
-  }
 
 }
